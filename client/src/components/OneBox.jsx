@@ -12,6 +12,7 @@ import image8 from '../images/LSQ_User.png';
 import image9 from '../images/No Message illustration.png';
 import image10 from '../images/Vector-3.png';
 import InBox from './InBox';
+import { useNavigate } from 'react-router-dom';
 
 function OneBox() {
     const [isDarkMode, setIsDarkMode] = useState(false);
@@ -36,6 +37,12 @@ function OneBox() {
     // Handle click on the sidebar icons
     const handleSectionChange = (section) => {
         setActiveSection(section);
+    };
+
+    const navigate = useNavigate();
+
+    const handleProfileClick = () => {
+    navigate('/login'); // Navigate to the Login component
     };
 
     return (
@@ -68,8 +75,8 @@ function OneBox() {
                             <img src={image7} alt='Reports'/>
                         </li>
                     </ul>
-                    <div className="user-profile">
-                        <img src={image8} alt='User'/>
+                    <div className="user-profile" onClick={handleProfileClick} style={{ cursor: 'pointer' }}>
+                          <img src={image8} alt="User" />
                     </div>
                 </nav>
 
