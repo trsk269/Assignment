@@ -1,0 +1,73 @@
+.email-item {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    padding: 1rem;
+    border-bottom: 1px solid #3a3a3c;
+    height: auto;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .email-item:hover {
+    background-color: #2c2c2e;
+  }
+  
+  .email-info {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+  }
+  
+  .line01 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .email-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #007bff;
+    border-radius: 50%;
+  }
+  
+  .email-address {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .email-date {
+    font-size: 0.875rem;
+    color: #9c9c9e;
+    justify-self: end;
+  }
+  
+  .email-content {
+    font-size: 0.875rem;
+    color: #bdbdbd;
+    margin: 0.5rem 0;
+    justify-self: start;
+  }
+  
+  .email-tags {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+  }
+  
+  .interested {
+    background-color: rgb(34, 36, 38);
+    color: #28a745;
+  }
+  
+  .campaign {
+    background-color: rgb(34, 36, 38);
+    color: white;
+  }
+  

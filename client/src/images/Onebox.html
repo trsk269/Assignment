@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReachInbox - Onebox</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 48px;
+            background-color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 0;
+        }
+        .sidebar .logo img {
+            width: 40px;
+            margin-bottom: 20px;
+        }
+        .sidebar .nav-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            flex-grow: 1;
+        }
+        
+        .sidebar .nav-list li {
+            margin: 32px 0;
+        }
+        
+        .sidebar .nav-list li a img {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .sidebar .user-profile img {
+            width: 48px;
+            height: 56px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+        .main-content{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 10rem 0;
+        }
+        
+        .content img {
+            width: 280px;
+            height: 230px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-family: DM Sans;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 36.53px;
+            text-align: center;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 0 20px;
+            height: 64px;
+            position: relative;
+        }
+        
+        header .workspace h1 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff; /* Adjust color if necessary */
+        }
+        
+        header .user-settings {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #fff;
+            margin-left: auto; /* Pushes the content to the left */
+        }
+        
+        header .user-settings img {
+            width: 15px;
+            margin-left: 10px; /* Adds space between "Tim's Workspace" and the arrow icon */
+        }
+        
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            margin-right: 15px; 
+            height: 24px;
+            width: 51px;
+        }
+        
+        .mode-toggle {
+            display: none;
+        }
+        
+        .toggle-label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 16px;
+            background-color: #444;
+            border-radius: 25px;
+            padding: 5px;
+            position: relative;
+            transition: background-color 0.3s ease;
+            margin-right: 10px; /* Adjust margin between toggle and "Tim's Workspace" */
+        }
+        
+        .sun-icon, .moon-icon {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background-size: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .sun-icon {
+            left: 5px;
+            background-image: url('./light_mode.png');
+        }
+        
+        .moon-icon {
+            right: 5px;
+            background-image: url('./Ellipse\ 2938.png');
+            opacity: 0;
+        }
+        
+        .mode-toggle:checked + .toggle-label {
+            background-color: #FFD700; /* Toggle button background when active */
+        }
+        
+        .mode-toggle:checked + .toggle-label .sun-icon {
+            opacity: 0;
+        }
+        
+        .mode-toggle:checked + .toggle-label .moon-icon {
+            opacity: 1;
+        }
+        .content p{
+            font-family: DM Sans;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27.4px;
+            text-align: center;
+        }      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <img src="./Frame 2087326278.png" alt="Logo">
+            </div>
+            <ul class="nav-list">
+                <li><a href="#"><img src="./Home_fill.png" alt="Home"></a></li>
+                <li><a href="#"><img src="./email.png" alt="User"></a></li>
+                <li><a href="#"><img src="./Vector.png" alt="Email"></a></li>
+                <li><a href="#"><img src="./Frame 23.png" alt="Send"></a></li>
+                <li><a href="#"><img src="./email-2.png" alt="List"></a></li>
+                <li><a href="#"><img src="./􀈤.png" alt="Chart"></a></li>
+                <li><a href="#"><img src="./Vector-2.png" alt="Chart"></a></li>
+            </ul>
+            <div class="user-profile">
+                <img src="./LSQ_User.png" alt="User Avatar">
+            </div>
+        </nav>
+        <div class="main-content">
+            <header>
+                <div class="workspace">
+                    <h1>Onebox</h1>
+                </div>
+                <div class="user-settings">
+                    <div class="toggle-container">
+                        <input type="checkbox" id="mode-toggle" class="mode-toggle">
+                        <label for="mode-toggle" class="toggle-label">
+                            <span class="sun-icon"></span>
+                            <span class="moon-icon"></span>
+                        </label>
+                    </div>
+                    <span>Tim's Workspace</span>
+                    <img src="./Vector-3.png" alt="Arrow">
+                </div>
+            </header>
+            <div class="content">
+                <img src="./No Message illustration.png" alt="Envelope">
+                <h2>It's the beginning of a legendary sales pipeline</h2>
+                <p>When you have inbound E-mails <br>you’ll see them here</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
